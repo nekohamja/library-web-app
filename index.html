@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+    </style>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Library</h1>
+      </div>
+    </header>
+
+    <div class="main container">
+      <button>+ Add Book</button>
+    </div>
+
+    <div class="modal">
+      <form>
+        <h3>Add book</h3>
+        <input type="text" placeholder="Title" />
+        <input type="text" placeholder="Author" />
+        <input type="number" placeholder="No. of Pages" />
+        <div>
+          <label for="isRead">I have read it</label>
+          <input type="checkbox" id="isRead" />
+        </div>
+        <button class="submit-button" type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="overlay"></div>
+
+    <footer>
+      <div class="container">
+        <p>nekohamja @ github</p>
+      </div>
+    </footer>
+  </body>
+</html>
