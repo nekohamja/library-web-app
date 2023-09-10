@@ -55,19 +55,18 @@ form {
   border-radius: 22px;
   background: #dddddd;
 }
-input[type] {
+input[type]:not(input[type="date"]) {
   border: none;
   padding: 22px;
   border-radius: 12px;
 }
-select.invalid {
-  border: 1px solid red;
-}
-
-select {
-  width: 100%;
+select,
+input[type="date"] {
   border-radius: 12px;
   padding: 8px;
+}
+select.invalid {
+  border: 1px solid red;
 }
 header {
   background: white;
