@@ -16,9 +16,10 @@ body {
   margin: 0;
   background: #dddddd;
 }
+
 p {
   margin: 0;
-  font-size: clamp(0.8rem, 1vw, 1.5rem);
+  font-size: clamp(1rem, 1vw, 1.5rem);
 }
 h1,
 h3 {
@@ -59,6 +60,15 @@ input[type] {
   padding: 22px;
   border-radius: 12px;
 }
+select.invalid {
+  border: 1px solid red;
+}
+
+select {
+  width: 100%;
+  border-radius: 12px;
+  padding: 8px;
+}
 header {
   background: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -68,16 +78,61 @@ footer {
   position: fixed;
   bottom: 0;
   text-align: center;
+  background: #dddddd;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 
 /* LAYOUT */
 .main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 .container {
   margin: 0px clamp(0px, 20%, 80vw);
   padding: 22px;
+}
+.book-grid {
+  width: 100%;
+  display: grid;
+  overflow: scroll;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding: 22px 0px;
+  gap: 22px;
+  .item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 22px;
+    gap: 12px;
+    border-radius: 12px;
+    width: 1fr;
+    > .item-title {
+      font-weight: bold;
+    }
+    > *:not(.item-title, .item-status, .item-remove) {
+      opacity: 70%;
+    }
+    > .item-remove {
+      padding: 12px;
+      width: 100%;
+      color: white;
+      background-color: #afafaf;
+    }
+    > .item-status {
+      padding: 12px;
+      width: 100%;
+      color: white;
+      background-color: #4a914a;
+    }
+    > .item-status.not-read {
+      background-color: #914a4a;
+    }
+  }
 }
 .modal {
   display: none;

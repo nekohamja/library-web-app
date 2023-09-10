@@ -17,29 +17,33 @@
       </div>
     </header>
 
-    <div class="main container">
-      <button>+ Add Book</button>
-    </div>
-
     <div class="modal">
-      <form>
+      <form id="form">
         <h3>Add book</h3>
-        <input type="text" placeholder="Title" />
-        <input type="text" placeholder="Author" />
-        <input type="number" placeholder="No. of Pages" />
-        <div>
-          <label for="isRead">I have read it</label>
-          <input type="checkbox" id="isRead" />
-        </div>
+        <input type="text" id="title" placeholder="Title" required />
+        <input type="text" id="author" placeholder="Author" required />
+        <input type="number" id="pages" placeholder="No. of Pages" required />
+        <input type="date" id="date" required />
+        <select id="status" required>
+          <option value="" selected disabled hidden>Read Status:</option>
+          <option value="Done reading">Read</option>
+          <option value="Not read">Not Read</option>
+        </select>
         <button class="submit-button" type="submit">Submit</button>
       </form>
     </div>
-    <div class="overlay"></div>
+
+    <div class="main container">
+      <button>+ Add Book</button>
+      <div class="book-grid"></div>
+    </div>
 
     <footer>
       <div class="container">
         <p>nekohamja @ github</p>
       </div>
     </footer>
+
+    <div class="overlay"></div>
   </body>
 </html>
